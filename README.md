@@ -66,7 +66,7 @@ Expanding cos(ka) ≈ 1 − (ka)²/2 gives a parabola E ≈ E₀ + t a²k², whi
 
 $$E(k)\approx c_2k^2+c_1k+c_0\quad\text{(polynomial fit over }|k|\le0.10\,\pi/a),\qquad m^*_{\text{num}}=\frac{\hbar^2}{2c_2}$$
 
-![Tight-binding fit](results/notebook1_crystals_and_bands/figures/01_tight_binding_effective_mass_fit.png)
+![Tight-binding fit](results/01_tight_binding_effective_mass_fit.png)
 
 | Quantity | Value |
 |---|---|
@@ -104,7 +104,7 @@ Inserting plane waves into the stencil gives this closed form. The second form s
 
 $$E=c_2k^2+c_0\ \ (\text{fit vs }k^2,\ |k|<0.2),\qquad m^*=\frac{\hbar^2}{2c_2}$$
 
-![FD fit](results/notebook1_crystals_and_bands/figures/02_finite_difference_dispersion_fit.png)
+![FD fit](results/02_finite_difference_dispersion_fit.png)
 
 **Result:** input m = 1.0000, extracted m\* = **1.0008** (0.08% high, from the −(ka)²/12 term).
 
@@ -126,7 +126,7 @@ $$t_{\text{eff}}=\frac{\hbar^2/2m_0}{m^*/m_0\cdot a^2}=\frac{3.810}{0.5\times1.0
 
 ħ²/2m₀ = 3.810 eV·Å² is the standard conversion constant, with m\* = 0.5 m₀.
 
-![Box levels](results/notebook1_crystals_and_bands/figures/03_particle_in_box_levels.png)
+![Box levels](results/03_particle_in_box_levels.png)
 
 | n | E_n (eV) | E_n / E₁ |
 |---|---|---|
@@ -163,13 +163,13 @@ $$\Delta=2\,|t_1-t_2|$$
 
 The gap is 2×(smallest |E|) and closes only when t₁ = t₂, which is the uniform chain.
 
-![SSH bands](results/notebook1_crystals_and_bands/figures/04_ssh_band_structures.png)
+![SSH bands](results/04_ssh_band_structures.png)
 
 *Solid: conduction bands for three t₂/t₁ values. Dashed: valence bands.*
 
-![SSH gap vs ratio](results/notebook1_crystals_and_bands/figures/05_ssh_gap_vs_hopping_ratio.png)
+![SSH gap vs ratio](results/05_ssh_gap_vs_hopping_ratio.png)
 
-![SSH gap at three ratios](results/notebook1_crystals_and_bands/figures/06_ssh_gap_at_three_ratios.png)
+![SSH gap at three ratios](results/figures/06_ssh_gap_at_three_ratios.png)
 
 | t₂/t₁ | Gap (numeric from H(k)) | Gap (2\|t₁−t₂\|) |
 |---|---|---|
@@ -211,7 +211,7 @@ Band edges for a = 0.5, ħ = m = 1 (computed on a fine q-grid; the zone-edge fre
 
 As P → 0 the bands approach free electrons, and as P grows the bands narrow toward the isolated-well levels, which is the tight-binding limit of Part A1.
 
-![KP zone schemes](results/notebook1_crystals_and_bands/figures/07_kronig_penney_zone_schemes.png)
+![KP zone schemes](results/07_kronig_penney_zone_schemes.png)
 
 > **This figure shows only P = 20.** The titles list P = [0.1, 1, 5, 20], but the loop in Cell 11 re-initializes its lists on every P, so only the last value survives. The left panel's two narrow bands (about 16.3-19.7 and 65.6-79.0) match my P = 20 table row exactly. The right panel is a repeated-zone plot made from the +k branch only (the loop reuses the leftover `sign`), not a true extended-zone scheme.
 
@@ -233,7 +233,7 @@ The wrap-around corner elements carry a phase e^(±ika) instead of the usual per
 
 For a pure cosine potential with Fourier component V₀, first-order perturbation theory predicts a first gap of **2V₀ = 3.0** at the zone edge k = π/a, centred on the free-electron energy 19.74.
 
-![KP vs FD](results/notebook1_crystals_and_bands/figures/08_kronig_penney_vs_finite_difference.png)
+![KP vs FD](results/figures/08_kronig_penney_vs_finite_difference.png)
 
 | Quantity (FD, a = 0.5) | Value |
 |---|---|
@@ -273,7 +273,7 @@ The notebook instead uses
 
 $$f_{\text{nb}}=1+4\cos\!\left(\tfrac{\sqrt3}{2}k_ya_{cc}\right)\cos\!\left(\tfrac32k_xa_{cc}\right)+4\cos^2\!\left(\tfrac32k_ya_{cc}\right)$$
 
-![Square vs honeycomb](results/notebook2_crystals_and_lattices/figures/01_square_vs_honeycomb_bands_3d.png)
+![Square vs honeycomb](results_2/01_square_vs_honeycomb_bands_3d.png)
 
 | | Notebook formula | Standard graphene formula |
 |---|---|---|
@@ -306,7 +306,7 @@ $$E_{1D}=-2t\cos k,\quad E_{2D}=-2t(\cos k_x+\cos k_y),\quad E_{3D}=-2t(\cos k_x
 
 Sampled on 5000 (1D), 300×300 (2D) and 60×60×60 (3D) k-points. The band bottoms are at −2t, −4t, −6t. The coarse 3D grid combined with small η causes the ripples visible in the 3D curve.
 
-![DOS](results/notebook2_crystals_and_lattices/figures/02_dos_1d_2d_3d_lattices.png)
+![DOS](results_2/02_dos_1d_2d_3d_lattices.png)
 
 ### Eq. 24: continuum (parabolic-band) DOS near the band bottom
 
@@ -318,7 +318,7 @@ The notebook's "Eq. (4)" curves are:
 
 $$g_{1D}=\frac{1}{\pi\hbar}\sqrt{\frac{2m^*}{E}},\qquad g_{2D}=\frac{m^*}{\pi\hbar^2 t},\qquad g_{3D}=\frac{1}{2\pi^2}\left(\frac{2m^*}{\hbar^2}\right)^{3/2}\sqrt E,\qquad m^*=1$$
 
-![DOS comparison](results/notebook2_crystals_and_lattices/figures/03_dos_numerical_vs_theory.png)
+![DOS comparison](results_2/03_dos_numerical_vs_theory.png)
 
 Comparison about 0.5 above the band bottom (numerics from a fine histogram at the ε = 0.475 bin centre, my own check; notebook theory evaluated at E = 0.5):
 
@@ -340,7 +340,7 @@ $$\frac{m_0}{m^*}\approx\frac{E_p}{E_g}\quad\Longrightarrow\quad\frac{m^*}{m_0}=
 
 In a narrow-gap semiconductor, the conduction and valence bands repel each other through the momentum matrix element (E_p). A smaller gap gives a more strongly curved conduction band and therefore a lighter electron.
 
-![Mass vs gap](results/notebook2_crystals_and_lattices/figures/04_effective_mass_vs_band_gap_III-V.png)
+![Mass vs gap](results_2/04_effective_mass_vs_band_gap_III-V.png)
 
 | Material | E_g (eV) | m\*/m₀ measured | m\*/m₀ theory (E_g/E_p) | Measured / theory |
 |---|---|---|---|---|
@@ -376,7 +376,7 @@ $$g_{2D}(E)\propto\sum_n\Theta(E-E_n),\qquad g_{1D}(E)\propto\sum_{n_y,n_z}\frac
 * **1D:** each subband adds a 1/√ spike at its onset (capped at 15 to avoid the infinity).
 * **0D:** fully discrete levels, drawn as Lorentzian-broadened peaks.
 
-![Confinement DOS](results/notebook2_crystals_and_lattices/figures/05_confinement_dos_2d_1d_0d.png)
+![Confinement DOS](results_2/figures/05_confinement_dos_2d_1d_0d.png)
 
 Features that fall inside the plotted 0-400 meV window (computed from Eq. 27):
 
@@ -398,7 +398,7 @@ $$E(k)=\frac{\hbar^2}{2m^*}k^2\ \Rightarrow\ E=c_2k^2+c_0,\qquad m^*=\frac{\hbar
 
 Synthetic "band data" E = (3.81/0.067)k² (k = ±0.04 Å⁻¹, 21 points) with Gaussian noise σ = 10⁻⁴ eV (seed 42) is fitted against k².
 
-![Curvature fit](results/notebook2_crystals_and_lattices/figures/06_curvature_fit_effective_mass.png)
+![Curvature fit](results_2/06_curvature_fit_effective_mass.png)
 
 | Quantity | Value |
 |---|---|
